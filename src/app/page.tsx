@@ -1,5 +1,8 @@
+"use client";
+
 import Image from 'next/image'
 import ProductDisplay from "./components/ProductDisplay/page"
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -10,6 +13,7 @@ export default function Home() {
             <div>
               テスト画面
               <div>
+                {/* <Link href={'/src/app/pricing/page.jsx'}>Pricing Page</Link> */}
                 <ProductDisplay />
               </div>
             </div>
