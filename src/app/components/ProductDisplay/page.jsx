@@ -1,21 +1,27 @@
 "use client"
 
+import { usePrices } from '@/app/pricing/page';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+
+// const {prices} = usePrices();
 
 const ProductDisplay = () => {
-
     const [prices , setPrices] = useState([]);
 
     const handlePrices = async (e) => {
         e.preventDefault()
 
 
-        useEffect(() => {
 
-            fetchPrices()
     
-        },[])
+
+
+        // useEffect(() => {
+
+        //     fetchPrices()
+    
+        // },[])
     
 
     const fetchPrices = async () => {
@@ -24,12 +30,16 @@ const ProductDisplay = () => {
         console.log(data);
 
     }
+
+    
+
+    
     
     
 
-    }
+}
+// console.log(prices);
 
-    
 
     const handleSubscription = async (e) => {
         
@@ -60,7 +70,10 @@ const ProductDisplay = () => {
                 <Home price={price} key={price.id} />
             ))}
             </div> */}
-            <div>
+
+
+
+<div>
             <form 
                 // action="/create-checkout-session"
                 // method="POST"
@@ -69,7 +82,7 @@ const ProductDisplay = () => {
                 >
             <input type='hidden' name="lookup_key" value="{{PRICE_LOOKUP_KEY}}" />
             <button id="checkout-and-portal-button"
-                    // type="submit"
+                    type="submit"
                     
                     className=' border-2 border-green-600 bg-green-400 rounded-lg w-[150px] h-[50px] hover:scale-110 active:scale-95 mt-[100px]'
                     onClick={handlePrices}
@@ -78,6 +91,7 @@ const ProductDisplay = () => {
             </button>
           </form>
             </div>
+            
          <div>
          <form 
                 // action="/create-checkout-session"

@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import ProductDisplay from "./components/ProductDisplay/page"
 import Link from 'next/link'
+// import Pricing from "./pricing/page"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
             <div>
               テスト画面
               <div>
+                {/* <Pricing /> */}
                 {/* <Link href={'/src/app/pricing/page.jsx'}>Pricing Page</Link> */}
                 <ProductDisplay />
               </div>
