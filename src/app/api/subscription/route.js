@@ -46,8 +46,8 @@ export async function POST (request) {
             }
         ],
         mode:"subscription",
-        success_url:'http://localhost:3000/success',
-        cancel_url:'http://localhost:3000/cancel'
+        success_url:'http://localhost:3000/components/success',
+        cancel_url:'http://localhost:3000/components/cancel',
     })
 
     console.log(prices)
