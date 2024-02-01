@@ -95,7 +95,7 @@ a {
   text-decoration: none;
   color: white;
 }
-#checkout-and-portal-button {
+#checkout-portal-button {
   height: 36px;
   background: #556cd6;
   color: white;
@@ -109,6 +109,6 @@ a {
   transition: all 0.2s ease;
   box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
 }
-#checkout-and-portal-button:hover {
+#checkout-portal-button:hover {
   opacity: 0.8;
 }
