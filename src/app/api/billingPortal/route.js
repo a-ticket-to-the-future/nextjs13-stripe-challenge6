@@ -5,7 +5,7 @@ import Stripe from "stripe";
 
 export async function POST (request) {
     
-
+    try{
     const stripe = new Stripe('sk_test_51OJs18DeAQc450QQx1df7rQv298LhrEKKTiTXXL5pzC5Wx4HjTQvA7dt3BiD74S5GMBco6bmk0yxc3T1nu8fW47600DijjICiS');
 
     // const {userId} = await request.json();
@@ -15,8 +15,7 @@ export async function POST (request) {
     // const {session_id} = request.json();
     // console.log(session_id);
     //ここまで
-    alert("hello")
-    console.log("request is here");
+    
 
     const {session_id} = await request.json();
     // const {session_id} = data.session_id;
@@ -32,8 +31,28 @@ export async function POST (request) {
     });
 
     console.log(portalSession);
+    console.log(portalSession.url)
 
-    return new NextResponse(JSON.stringify(portalSession.url))
+
+    //こっちはportalSession.urlが出力される
+    return new NextResponse(JSON.stringify({url:portalSession.url}),{
+        status:200,
+        headers:{
+            "Content-Type":"application/json"
+        }
+    });
+} catch (error) {
+    console.log(error);
+
+    return new NextResponse(JSON.stringify({error:error.message}),{
+        status:500,
+        headers:{
+            "Content-Type":"application/json"
+        }
+    });
+
+}
     // .redirect(303,portalSession.url); 
-
+    // return NextResponse.redirect(portalSession.url);
+    //こっちはリダイレクトされないしエラーになる
 }

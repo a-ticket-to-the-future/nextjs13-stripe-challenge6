@@ -54,10 +54,16 @@ const success = () => {
 
     try{
       const response = await axios.post('/api/billingPortal',{
-      session_id : `${sessionId}`,
+      session_id : session_id,
       });
       
       console.log(response);
+      const {url} = response.data;
+      if(url){
+        window.location.href = url;
+      } else {
+        console.log("urlが取得できませんでした")
+      }
     } catch(error) {
       console.log(error);
     }
