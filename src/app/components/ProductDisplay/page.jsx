@@ -48,7 +48,7 @@ const ProductDisplay = () => {
     
 
 
-        const {data} = await axios.post('api/subscription',{
+        const {data} = await axios.post('/api/subscription',{
             priceId:prices.id
         },
         {

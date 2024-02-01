@@ -46,13 +46,16 @@ export async function POST (request) {
             }
         ],
         mode:"subscription",
-        success_url:'http://localhost:3000/components/success',
+        success_url:`http://localhost:3000/components/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url:'http://localhost:3000/components/cancel',
     })
-
+    console.log(session);
     console.log(prices)
     console.log(data);
-
+    // console.log(NextResponse.json(session.url));
     return NextResponse.json(session.url);
 
 }
+
+
+
