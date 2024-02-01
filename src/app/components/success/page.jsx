@@ -33,7 +33,6 @@ const success = () => {
     const sessionId = query.get('session_id');
     // console.log(sessionId);
     
-     setSession_id(sessionId);
 
 
     //  billingPortal(sessionId, {
@@ -54,7 +53,7 @@ const success = () => {
 
     try{
       const response = await axios.post('/api/billingPortal',{
-      session_id : session_id,
+      session_id : sessionId,
       });
       
       console.log(response);
